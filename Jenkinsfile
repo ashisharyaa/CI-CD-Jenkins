@@ -10,7 +10,7 @@ pipeline {
     }
     stage('Test') {
       steps {
-        sh 'docker run my-flask-app python -m pytest app/tests/'
+        sh 'docker run $DOCKER_BFLASK_IMAGE python -m pytest app/tests/'
       }
     }
     stage('Deploy') {
